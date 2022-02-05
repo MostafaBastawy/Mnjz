@@ -29,11 +29,11 @@ class _HomeScreenState extends State<HomeScreen>
     return BlocBuilder<AppCubit, AppStates>(
       builder: (BuildContext context, state) => Scaffold(
         appBar: null,
-        body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w),
-          child: Column(
-            children: [
-              Stack(
+        body: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
+              child: Stack(
                 children: [
                   Align(
                     alignment: AlignmentDirectional.topCenter,
@@ -161,7 +161,10 @@ class _HomeScreenState extends State<HomeScreen>
                   ),
                 ],
               ),
-              SizedBox(
+            ),
+            Padding(
+              padding: EdgeInsetsDirectional.only(top: 20.h),
+              child: SizedBox(
                 height: 40.h,
                 child: TabBar(
                   isScrollable: true,
@@ -171,38 +174,38 @@ class _HomeScreenState extends State<HomeScreen>
                   unselectedLabelColor: const Color(0xAF000000),
                   tabs: [
                     Text(
-                      '   الاعلانات   ',
+                      '    الاعلانات     ',
                       style: TextStyle(
                           fontSize: 14.sp, fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      '   الاقسام   ',
+                      '    الاقسام     ',
                       style: TextStyle(fontSize: 14.sp),
                     ),
                     Text(
-                      '   متجر   ',
+                      '    متجر     ',
                       style: TextStyle(fontSize: 14.sp),
                     ),
                     Text(
-                      '   شوهٍد   ',
+                      '    شوهٍد     ',
                       style: TextStyle(fontSize: 14.sp),
                     ),
                   ],
                 ),
               ),
-              Expanded(
-                child: TabBarView(
-                  controller: tabController,
-                  children: [
-                    Container(),
-                    Container(),
-                    Container(),
-                    Container(),
-                  ],
-                ),
+            ),
+            Expanded(
+              child: TabBarView(
+                controller: tabController,
+                children: [
+                  Container(),
+                  Container(),
+                  Container(),
+                  Container(),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
