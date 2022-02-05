@@ -4,9 +4,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mnjz/cubit/cubit.dart';
 import 'package:mnjz/cubit/states.dart';
+import 'package:mnjz/modules/order_placed_3/order_placed_3.dart';
 
 class HomeScreen extends StatelessWidget {
   var searchController = TextEditingController();
+  TabController? tabController = TabController(length: 5, vsync: this);
 
   HomeScreen({Key? key}) : super(key: key);
 
@@ -84,7 +86,8 @@ class HomeScreen extends StatelessWidget {
                               ),
                             ),
                           ],
-                        )
+                        ),
+                        SizedBox(width: 13.w),
                       ],
                     ),
                   ),
@@ -146,6 +149,53 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                 ],
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 5.0.w),
+                child: SizedBox(
+                  height: 40.h,
+                  child: TabBar(
+                    isScrollable: true,
+                    controller: tabController,
+                    indicatorColor: Colors.red,
+                    labelColor: Colors.blue,
+                    unselectedLabelColor: Colors.grey[500],
+                    tabs: [
+                      Text(
+                        'Reverselt!',
+                        style: TextStyle(fontSize: 14.sp),
+                      ),
+                      Text(
+                        'Info',
+                        style: TextStyle(fontSize: 14.sp),
+                      ),
+                      Text(
+                        'Menu',
+                        style: TextStyle(fontSize: 14.sp),
+                      ),
+                      Text(
+                        'Reviews',
+                        style: TextStyle(fontSize: 14.sp),
+                      ),
+                      Text(
+                        'Photos',
+                        style: TextStyle(fontSize: 14.sp),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Expanded(
+                child: TabBarView(
+                  controller: tabController,
+                  children: [
+                    OrderPlaced1(),
+                    OrderPlaced1(),
+                    OrderPlaced1(),
+                    OrderPlaced1(),
+                    OrderPlaced1(),
+                  ],
+                ),
               ),
             ],
           ),
