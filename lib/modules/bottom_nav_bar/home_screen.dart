@@ -161,35 +161,33 @@ class _HomeScreenState extends State<HomeScreen>
                   ),
                 ],
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 5.0.w),
-                child: SizedBox(
-                  height: 40.h,
-                  child: TabBar(
-                    isScrollable: true,
-                    controller: tabController,
-                    indicatorColor: Colors.red,
-                    labelColor: Colors.blue,
-                    unselectedLabelColor: Colors.grey[500],
-                    tabs: [
-                      Text(
-                        'الاعلانات',
-                        style: TextStyle(fontSize: 14.sp),
-                      ),
-                      Text(
-                        'الاقسام',
-                        style: TextStyle(fontSize: 14.sp),
-                      ),
-                      Text(
-                        'متجر',
-                        style: TextStyle(fontSize: 14.sp),
-                      ),
-                      Text(
-                        'شوهٍد',
-                        style: TextStyle(fontSize: 14.sp),
-                      ),
-                    ],
-                  ),
+              SizedBox(
+                height: 40.h,
+                child: TabBar(
+                  isScrollable: true,
+                  controller: tabController,
+                  indicatorColor: const Color(0xAF007AFC),
+                  labelColor: const Color(0xAF007AFC),
+                  unselectedLabelColor: const Color(0xAF000000),
+                  tabs: [
+                    Text(
+                      '   الاعلانات   ',
+                      style: TextStyle(
+                          fontSize: 14.sp, fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      '   الاقسام   ',
+                      style: TextStyle(fontSize: 14.sp),
+                    ),
+                    Text(
+                      '   متجر   ',
+                      style: TextStyle(fontSize: 14.sp),
+                    ),
+                    Text(
+                      '   شوهٍد   ',
+                      style: TextStyle(fontSize: 14.sp),
+                    ),
+                  ],
                 ),
               ),
               Expanded(
