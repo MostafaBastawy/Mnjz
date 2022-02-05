@@ -198,7 +198,45 @@ class _HomeScreenState extends State<HomeScreen>
               child: TabBarView(
                 controller: tabController,
                 children: [
-                  Container(),
+                  Container(
+                    child: Column(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Row(
+                            children: [
+                              Text(
+                                'عقارات للبيع',
+                                style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 20.sp,
+                                  color: const Color(0xAF000000),
+                                ),
+                              ),
+                              const Spacer(),
+                              Container(
+                                width: 75.w,
+                                height: 24.h,
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(12.r),
+                                  color: const Color(0xAF007AFC),
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    'شاهد المزيد',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 12.sp,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                   Container(),
                   Container(),
                   Container(),
