@@ -4,13 +4,24 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:mnjz/cubit/cubit.dart';
 import 'package:mnjz/cubit/states.dart';
-import 'package:mnjz/modules/order_placed_3/order_placed_3.dart';
 
-class HomeScreen extends StatelessWidget {
-  var searchController = TextEditingController();
-  TabController? tabController = TabController(length: 5, vsync: this);
-
+class HomeScreen extends StatefulWidget {
   HomeScreen({Key? key}) : super(key: key);
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen>
+    with SingleTickerProviderStateMixin {
+  var searchController = TextEditingController();
+  TabController? tabController;
+
+  @override
+  void initState() {
+    tabController = TabController(length: 4, vsync: this);
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -162,23 +173,19 @@ class HomeScreen extends StatelessWidget {
                     unselectedLabelColor: Colors.grey[500],
                     tabs: [
                       Text(
-                        'Reverselt!',
+                        'الاعلانات',
                         style: TextStyle(fontSize: 14.sp),
                       ),
                       Text(
-                        'Info',
+                        'الاقسام',
                         style: TextStyle(fontSize: 14.sp),
                       ),
                       Text(
-                        'Menu',
+                        'متجر',
                         style: TextStyle(fontSize: 14.sp),
                       ),
                       Text(
-                        'Reviews',
-                        style: TextStyle(fontSize: 14.sp),
-                      ),
-                      Text(
-                        'Photos',
+                        'شوهٍد',
                         style: TextStyle(fontSize: 14.sp),
                       ),
                     ],
@@ -189,11 +196,10 @@ class HomeScreen extends StatelessWidget {
                 child: TabBarView(
                   controller: tabController,
                   children: [
-                    OrderPlaced1(),
-                    OrderPlaced1(),
-                    OrderPlaced1(),
-                    OrderPlaced1(),
-                    OrderPlaced1(),
+                    Container(),
+                    Container(),
+                    Container(),
+                    Container(),
                   ],
                 ),
               ),
