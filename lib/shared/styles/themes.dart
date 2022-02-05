@@ -1,29 +1,26 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
 ThemeData lightTheme(BuildContext? context) => ThemeData(
       scaffoldBackgroundColor: Colors.white,
-      fontFamily: EasyLocalization.of(context!)!.locale == const Locale('en')
-          ? 'Ubuntu'
-          : 'Cairo',
-      bottomNavigationBarTheme: BottomNavigationBarThemeData(
-        backgroundColor: const Color(0xAF1C4182),
+      fontFamily: 'Poppins',
+      bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+        backgroundColor: Colors.white,
         type: BottomNavigationBarType.fixed,
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.white,
+        selectedItemColor: Color(0xAF007AFC),
+        unselectedItemColor: Color(0xAF7F8083),
         selectedLabelStyle:
-            TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
         unselectedLabelStyle:
             TextStyle(fontSize: 12, fontWeight: FontWeight.w400),
         elevation: 0.0,
       ),
-      appBarTheme: AppBarTheme(
+      appBarTheme: const AppBarTheme(
         elevation: 0.0,
         color: Colors.white,
         titleTextStyle: TextStyle(
           fontWeight: FontWeight.bold,
           fontSize: 16,
-          color: const Color(0xAF10306C),
+          color: Color(0xAF10306C),
         ),
       ),
     );

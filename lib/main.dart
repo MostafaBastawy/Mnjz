@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:mnjz/cubit/bloc_observer.dart';
 import 'package:mnjz/cubit/cubit.dart';
 import 'package:mnjz/generated/codegen_loader.g.dart';
-import 'package:mnjz/modules/homelayout_screen.dart';
+import 'package:mnjz/modules/home_layout.dart';
 import 'package:mnjz/shared/styles/themes.dart';
 
 void main() async {
@@ -16,6 +16,7 @@ void main() async {
 
   runApp(
     EasyLocalization(
+      startLocale: const Locale('ar'),
       supportedLocales: const [
         Locale('en'),
         Locale('ar'),
@@ -40,17 +41,20 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (BuildContext context) => AppCubit()),
       ],
       child: ScreenUtilInit(
-        designSize: const Size(428, 926),
+        designSize: const Size(414, 735),
         minTextAdapt: true,
         splitScreenMode: true,
         builder: () => MaterialApp(
+          builder: (context, widget) {
+            ScreenUtil.setContext(context);
+            return MediaQuery(
+              data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+              child: widget!,
+            );
+          },
           debugShowCheckedModeBanner: false,
           theme: lightTheme(context),
           themeMode: ThemeMode.light,
-          builder: (context, widget) => MediaQuery(
-            data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
-            child: widget!,
-          ),
           localizationsDelegates: context.localizationDelegates,
           supportedLocales: context.supportedLocales,
           locale: context.locale,
