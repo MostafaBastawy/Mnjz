@@ -198,7 +198,7 @@ class _HomeScreenState extends State<HomeScreen>
               child: TabBarView(
                 controller: tabController,
                 children: [
-                  Container(
+                  SizedBox(
                     child: Column(
                       children: [
                         SizedBox(height: 15.h),
@@ -295,7 +295,60 @@ class _HomeScreenState extends State<HomeScreen>
                       ],
                     ),
                   ),
-                  Container(),
+                  GridView.count(
+                    padding: const EdgeInsets.symmetric(horizontal: 5),
+                    physics: const BouncingScrollPhysics(),
+                    shrinkWrap: true,
+                    scrollDirection: Axis.vertical,
+                    crossAxisCount: 2,
+                    mainAxisSpacing: 5.0,
+                    crossAxisSpacing: 5.0,
+                    childAspectRatio: 1 / 1,
+                    children: List.generate(
+                      30,
+                      (index) => Stack(
+                        children: [
+                          Container(
+                            height: 160.h,
+                            width: 201.w,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(4.r),
+                              image: const DecorationImage(
+                                image: AssetImage(
+                                  'assets/images/car.png',
+                                ),
+                                fit: BoxFit.fill,
+                              ),
+                            ),
+                          ),
+                          Align(
+                            alignment: AlignmentDirectional.topStart,
+                            child: Padding(
+                              padding: const EdgeInsets.all(5.0),
+                              child: Container(
+                                width: 97.w,
+                                height: 31.h,
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(4.r),
+                                ),
+                                child: Center(
+                                  child: Text(
+                                    'سيارات ومركبات',
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontSize: 12.sp,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
                   Container(),
                   Container(),
                 ],
