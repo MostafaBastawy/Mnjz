@@ -201,8 +201,9 @@ class _HomeScreenState extends State<HomeScreen>
                   Container(
                     child: Column(
                       children: [
+                        SizedBox(height: 15.h),
                         Padding(
-                          padding: const EdgeInsets.all(20.0),
+                          padding: const EdgeInsets.all(10.0),
                           child: Row(
                             children: [
                               Text(
@@ -232,6 +233,63 @@ class _HomeScreenState extends State<HomeScreen>
                                 ),
                               ),
                             ],
+                          ),
+                        ),
+                        Expanded(
+                          child: GridView.count(
+                            padding: const EdgeInsets.symmetric(horizontal: 5),
+                            physics: const BouncingScrollPhysics(),
+                            shrinkWrap: true,
+                            scrollDirection: Axis.vertical,
+                            crossAxisCount: 3,
+                            mainAxisSpacing: 5.0,
+                            crossAxisSpacing: 5.0,
+                            childAspectRatio: 1 / 1,
+                            children: List.generate(
+                              30,
+                              (index) => Stack(
+                                children: [
+                                  Container(
+                                    height: 134.h,
+                                    width: 134.w,
+                                    decoration: BoxDecoration(
+                                      color: Colors.white,
+                                      borderRadius: BorderRadius.circular(4.r),
+                                      image: const DecorationImage(
+                                        image: AssetImage(
+                                          'assets/images/grid.png',
+                                        ),
+                                        fit: BoxFit.fill,
+                                      ),
+                                    ),
+                                  ),
+                                  Align(
+                                    alignment: AlignmentDirectional.bottomEnd,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(5.0),
+                                      child: Container(
+                                        width: 95.w,
+                                        height: 23.h,
+                                        decoration: BoxDecoration(
+                                          color: const Color(0xAF707070),
+                                          borderRadius:
+                                              BorderRadius.circular(4.r),
+                                        ),
+                                        child: Center(
+                                          child: Text(
+                                            '10,000,000 جنيه',
+                                            style: TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 12.sp,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
                           ),
                         ),
                       ],
