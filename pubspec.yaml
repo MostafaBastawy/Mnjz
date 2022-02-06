@@ -39,6 +39,7 @@ dependencies:
   bloc: ^7.2.1
   easy_localization: ^3.0.0
   font_awesome_flutter: ^9.2.0
+  flutter_rating_bar: ^4.0.0
 
 dev_dependencies:
   flutter_test:
